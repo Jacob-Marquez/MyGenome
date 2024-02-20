@@ -18,5 +18,9 @@ java -jar...
 
 ## 3. Count number of forward reads remaining
 ```bash
-grep
+grep -v "@" UFVPY204_1_paired.fastq | grep -v "+" | grep -v "F" | wc -c
+```
+Verified that there were no extra characters being counted so I ran the following code and it came back with a value of 0
+```bash
+grep -v "@" UFVPY204_2_paired.fastq | grep -v "+" | grep -v "F" | grep -v "A" | grep -v "T" | grep -v "C" | grep -v "G"| wc -c
 ```
